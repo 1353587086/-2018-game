@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ground
+  - aimPoint
+  - wall
+  - enemy
+  - spine
+  - pickup
+  - teleporter  - boss
+  - teleporter
+  - boss
+  - enemypoint
+  - bombpoint
+  - weaponpoint
+  - bomb
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: enemy
+    uniqueID: 3991430701
+    locked: 0
+  - name: player
+    uniqueID: 2561470463
+    locked: 0
