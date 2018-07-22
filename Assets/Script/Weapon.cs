@@ -10,11 +10,12 @@ public enum Guns {
 }
 
 public class Weapon : MonoBehaviour {
+    
     static Dictionary<Guns, int[]> gunInfo = new Dictionary<Guns, int[]>() {
         {Guns.empty, new int[] {0, 1, 99999} },
-        {Guns.pistol, new int[] { 1, 0, 5 } },
-        {Guns.shotgun, new int[] { 2, -1, 3} },
-        {Guns.jumpgun, new int[] {4, 4, 2} },
+        {Guns.pistol, new int[] { 1, 0, 999 } },
+        {Guns.shotgun, new int[] { 2, 0, 999} },
+        {Guns.jumpgun, new int[] {4, 4, 999} },
     };
     public Guns gunNow;
 
@@ -44,6 +45,7 @@ public class Weapon : MonoBehaviour {
         loadCount = gunInfo[gun][2];
         GetComponent<Animator>().SetInteger("stat", (int)gunNow);
         FindObjectOfType<WeaponBar>().PickGun(this);
+
     }
 
     public int loadCount = 0;
@@ -59,23 +61,21 @@ public class Weapon : MonoBehaviour {
                 (item.tag == "enemy" || item.tag == "boss"|| item.tag == "bomb")) { 
                 shot = true;
                 item.GetComponent<Enemy>().OneShot();
+
+                if (item.GetComponent<LameMove>())
+                   GetComponent<Player>().whichkill = 2;
+                else if (item.GetComponent<DiagonalMove>())
+                    GetComponent<Player>().whichkill = 3;
+                else if (item.GetComponent<NormalMove>())
+                    GetComponent<Player>().whichkill = 1;
+                
             }
         }
 
 
         //播放音效，以及动画，返回后坐力
         if (shot) {
-            //map.lastHit = 0.5f;
-            Vector2 directionVec2 = new Vector2(direction[0], direction[1]);
-            if (directionVec2 == Vector2.left) {
-                GetComponent<AnimatorControl>().HeroShot(0);
-            } else if (directionVec2 == Vector2.right) {
-                GetComponent<AnimatorControl>().HeroShot(1);
-            } else if (directionVec2 == Vector2.up) {
-                GetComponent<AnimatorControl>().HeroShot(2);
-            } else if (directionVec2 == Vector2.down) {
-                GetComponent<AnimatorControl>().HeroShot(3);
-            }
+            
             if (gunNow == Guns.pistol) {
                 FindObjectOfType<SoundManager>().Play("pistolShot");
             }else if(gunNow == Guns.shotgun) {

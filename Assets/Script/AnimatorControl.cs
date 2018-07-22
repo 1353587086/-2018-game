@@ -12,7 +12,7 @@ public class AnimatorControl : MonoBehaviour {
             return player;
         }
     }
-    public GameObject boss,fire,fireupdown;
+    public GameObject boss;
     Transform herots
     {
         get { return hero.GetComponent<Transform>(); }
@@ -24,15 +24,8 @@ public class AnimatorControl : MonoBehaviour {
     SpriteRenderer herosr {
         get { return hero.GetComponent<SpriteRenderer>(); }
     }
-    SpriteRenderer weaponsr {
-        get {return hero.transform.Find("weapon").GetComponent<SpriteRenderer>(); }
-    }
-    SpriteRenderer firesr {
-        get { return hero.transform.Find("Fire").GetComponent<SpriteRenderer>(); }
-    }
-    SpriteRenderer fireupdownsr {
-        get { return hero.transform.Find("FireUpDown").GetComponent<SpriteRenderer>(); }
-    }
+   
+   
     SpriteMask heromask;
 
 	// Use this for initialization
@@ -43,14 +36,7 @@ public class AnimatorControl : MonoBehaviour {
             bossani = boss.GetComponent<Animator>();
         }
         catch(System.Exception e) { }
-
-        var ts1 = this.transform.Find("Fire");
-
-        var ts2 = this.transform.Find("FireUpDown");
-        offset1 = ts1.position - herots.position;
-        offset2 = new Vector3(ts1.position.x - herots.position.x, 5 * (herots.position.y - ts1.position.y), 1);
-        offset3 = ts2.position - herots.position;
-        offset4 = new Vector3(ts2.position.x - herots.position.x, 5 * (herots.position.y - ts2.position.y), 1);
+        
 
 
     }
@@ -62,8 +48,6 @@ public class AnimatorControl : MonoBehaviour {
         {
             case 0:
                 herosr.flipX = false;
-                weaponsr.enabled=true;
-                Instantiate(fire, transform);
                 /*
                 firesr.enabled=true;
                 fireupdownsr.enabled=false;*/
@@ -71,23 +55,17 @@ public class AnimatorControl : MonoBehaviour {
             case 1:
                 
                 herosr.flipX = true;
-                weaponsr.enabled = true;
-                Instantiate(fire, transform);
                 /*
                 firesr.enabled=true;
                 fireupdownsr.enabled=false;*/
                 break;
             case 2:
                 herosr.flipX = true;
-                weaponsr.enabled=false;
-                Instantiate(fireupdown, transform);
                 //firesr.enabled=false;
                 //fireupdownsr.enabled=true;
                 break;
             case 3:
                 herosr.flipX = false;
-                weaponsr.enabled=false;
-                Instantiate(fireupdown, transform);
                 // firesr.enabled=false;
                 // fireupdownsr.enabled=true;
                 break;

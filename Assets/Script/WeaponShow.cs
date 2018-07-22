@@ -38,9 +38,9 @@ public class WeaponShow : MonoBehaviour
     void Update()
     {
         animator.SetInteger("stat", heroAnimator.GetInteger("stat"));
-        if (heroAnimator.GetBool("isShoot"))
+        if (heroAnimator.GetBool("attack"))
         {
-            animator.SetBool("isShoot", true);
+            animator.SetBool("attack", true);
             //Debug.Log(this.name);
         }
         if (!herosr.flipX)

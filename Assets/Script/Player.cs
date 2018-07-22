@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     Map map;
     MapMist mapMist;
     //public static float revivelife = 0.4f;
+    public int whichkill = 0;
     void Start() {
         map = FindObjectOfType<Map>();
         mapMist = FindObjectOfType<MapMist>();
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour {
     }
 
     public void Go(int[] direction) {
+
+        CreateAimPoint();
         if (isDead) return;
         int[] moveMult = GetComponent<Weapon>().Shoot(direction);
         int shot = moveMult[0];//是否打中了
@@ -73,6 +76,23 @@ public class Player : MonoBehaviour {
             {
                 item.OneAction();
             }
+            switch (whichkill) { 
+            case 1:
+                    GetComponent<Weapon>().PickGun(Guns.pistol);
+                    whichkill = 0;
+                    break;
+            case 2:
+                    GetComponent<Weapon>().PickGun(Guns.shotgun);
+                    whichkill = 0;
+                    break;
+            case 3:
+                    GetComponent<Weapon>().PickGun(Guns.jumpgun);
+                    whichkill = 0;
+                    break;
+            }
+            CreateAimPoint();
+
+
             /*
             if (FindObjectOfType<Boss>()) {
                 FindObjectOfType<Boss>().OneAction();
@@ -83,8 +103,8 @@ public class Player : MonoBehaviour {
             FindObjectOfType<SoundManager>().Play("move");
             GetComponent<Animator>().SetBool("isMoving", true);
         }
-        //mapMist.UpdateMist();
-        FindObjectOfType<Radar>().Step();
+        
+
 
     }
 
@@ -124,7 +144,7 @@ public class Player : MonoBehaviour {
             GameObject[] around = map.FindGridItemInRange(pos, direction, GetComponent<Weapon>().range);
             int i = around.Length;
             while (i > 0) {
-                GameObject g = Instantiate(pointPrefab, transform.position + new Vector3(0, 0.1f, 0) + i* 0.6f*(new Vector3(direction[0], direction[1],-1)), Quaternion.identity);
+                GameObject g = Instantiate(pointPrefab, transform.position + new Vector3(0, 0.1f, 0) + i* 0.6f*(new Vector3(direction[0], direction[1],-1)), Quaternion.identity,transform);
                 g.GetComponent<SpriteRenderer>().color = now_color;
                 i -= 1;
             }
@@ -132,7 +152,6 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
-        CreateAimPoint();
         
     }
 
@@ -176,9 +195,6 @@ public class Player : MonoBehaviour {
                 introSprite = introSprites[4];
             }
             FindObjectOfType<DieImage>().Show(item.GetComponent<SpriteRenderer>().sprite, introSprite);
-            transform.Find("Fire").gameObject.SetActive(false);
-            transform.Find("FireUpDown").gameObject.SetActive(false);
-            transform.Find("weapon").gameObject.SetActive(false);
             StartCoroutine(Restart());
         }
 
