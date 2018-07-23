@@ -58,6 +58,7 @@ public class Bomb : MonoBehaviour {
     {
         noDie = false;
         yield return new WaitForFixedUpdate();
+        GetComponent<Animator>().SetBool("isBoom", true);
         FindObjectOfType<SoundManager>().Play("boom");
 
         GameObject[] around = new GameObject[] {

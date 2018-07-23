@@ -73,9 +73,9 @@ GameObject:
   - component: {fileID: 114615242427316056}
   - component: {fileID: 114949296191318662}
   - component: {fileID: 95029948701268938}
-  - component: {fileID: 331942712656537460}
   - component: {fileID: 61083208107883106}
   - component: {fileID: 50516718668975472}
+  - component: {fileID: 114937038063079492}
   m_Layer: 2
   m_Name: player
   m_TagString: Player
@@ -383,6 +383,18 @@ MonoBehaviour:
   redGun: {r: 1, g: 0.015686275, b: 0.22352943, a: 1}
   blueGun: {r: 0.011764707, g: 0.9294118, b: 1, a: 1}
   greenGun: {r: 0.011764707, g: 1, b: 0.39607847, a: 1}
+--- !u!114 &114937038063079492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1575793366159276}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d754d6d040e6954485d7ba62d6e9242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tri: 0
 --- !u!114 &114949296191318662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -394,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1152fbb576ab3d84aa4e83c3101fb6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunNow: 0
+  gunNow: 1
   loadCount: 99999
 --- !u!212 &212207207209297728
 SpriteRenderer:
@@ -520,7 +532,7 @@ SpriteRenderer:
   m_Size: {x: 12.8, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!331 &331672084698603502
 SpriteMask:
@@ -563,44 +575,3 @@ SpriteMask:
   m_FrontSortingOrder: 301
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 1
---- !u!331 &331942712656537460
-SpriteMask:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1575793366159276}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_MaskAlphaCutoff: 0.2
-  m_FrontSortingLayerID: 0
-  m_BackSortingLayerID: 0
-  m_FrontSortingLayer: 0
-  m_BackSortingLayer: 0
-  m_FrontSortingOrder: 0
-  m_BackSortingOrder: 0
-  m_IsCustomRangeActive: 0
