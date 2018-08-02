@@ -247,12 +247,12 @@ public class MapEditor : MonoBehaviour {
             }
         }
         GetComponent<Map>().UpdateSortOrder();
-        FindObjectOfType<CameraCenter>().Trigger();
+        //FindObjectOfType<CameraCenter>().Trigger();
         if (FindObjectOfType<EnemyTriggerManager>()) {
             FindObjectOfType<EnemyTriggerManager>().Load();
         }
         GetComponent<Map>().lastHit = 0.5f;
-        FindObjectOfType<Radar>().Initial();
+        //FindObjectOfType<Radar>().Initial();
     }
 
     public bool release = false;

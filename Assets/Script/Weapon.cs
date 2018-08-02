@@ -44,7 +44,7 @@ public class Weapon : MonoBehaviour {
         gunNow = gun;
         loadCount = gunInfo[gun][2];
         GetComponent<Animator>().SetInteger("stat", (int)gunNow);
-        FindObjectOfType<WeaponBar>().PickGun(this);
+       // FindObjectOfType<WeaponBar>().PickGun(this);
 
     }
 
