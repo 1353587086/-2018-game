@@ -265,9 +265,11 @@ public class MapEditor : MonoBehaviour {
     }
 
     void WriteFile(string fileName, string content) {
+        
         if (release)
             return;
         string path = Application.persistentDataPath + fileName;
+        Debug.Log(path);
         File.WriteAllText(path, content);
     }
     string ReadFile(string fileName) {

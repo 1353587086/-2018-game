@@ -108,6 +108,48 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &52676531
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4272769802306244, guid: bff1231771939514ea04970dfccae760, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 9.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272769802306244, guid: bff1231771939514ea04970dfccae760, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272769802306244, guid: bff1231771939514ea04970dfccae760, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272769802306244, guid: bff1231771939514ea04970dfccae760, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272769802306244, guid: bff1231771939514ea04970dfccae760, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272769802306244, guid: bff1231771939514ea04970dfccae760, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272769802306244, guid: bff1231771939514ea04970dfccae760, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272769802306244, guid: bff1231771939514ea04970dfccae760, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bff1231771939514ea04970dfccae760, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &193900142
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +394,23 @@ MonoBehaviour:
   groundPrefabs:
   - {fileID: 1448094894860026, guid: b3113e9477b8a2347951c668613c82dd, type: 2}
   - {fileID: 1317660089314284, guid: cec6d805ad965c240a3c786f50366027, type: 2}
+  - {fileID: 1647746693529344, guid: b7886a991a7c5f6479e8fe2953ed8ab3, type: 2}
+  - {fileID: 1800212807744894, guid: 6f1a1f04ca3e3144d948e83a1cdb61bc, type: 2}
+  - {fileID: 1663731443322258, guid: eabacf0157b227847b4a79ba93864168, type: 2}
+  - {fileID: 1938949520330934, guid: 08a54fe8d427a69469929cd9e3dbf8af, type: 2}
+  - {fileID: 1269979632162002, guid: b7727ae2ce429d648958718e791c6c46, type: 2}
+  - {fileID: 1708800201532022, guid: b7592b2eb645bb64d9f644ea00a193da, type: 2}
+  - {fileID: 1112084889314838, guid: bab2947b8686ec14c9a69b66b6a95460, type: 2}
+  - {fileID: 1891896370136320, guid: 38e795b75361c5741a279d4dee390eb5, type: 2}
+  - {fileID: 1274763618317588, guid: bf63e84777700984d98f4bf27c6df2c0, type: 2}
+  - {fileID: 1589060503291330, guid: c5885cd2083047640855f058f830f4df, type: 2}
+  - {fileID: 1582855699201504, guid: 89d9bc6b248a84e439d7addaeb7ef3d1, type: 2}
+  - {fileID: 1214538877052332, guid: f555d595ab14b014baa4a2f3ffda8bf1, type: 2}
+  - {fileID: 1962240114630202, guid: ee048f62beaabff4ea835cfbe16e043c, type: 2}
+  - {fileID: 1821298027843878, guid: 7ca094f3c8448094fab932eefb3b4ecd, type: 2}
+  - {fileID: 1492860086167888, guid: 8747f157f94ce054d8c085dad4d60cab, type: 2}
+  - {fileID: 1012032944211112, guid: 32f02c94927d47a44a911388ba4ee4f8, type: 2}
+  - {fileID: 1303206650625406, guid: ee671b9e6898af94bb3ca6d4aa683e16, type: 2}
   itemPrefabs:
   - {fileID: 1545116150718606, guid: 3d2decb2ad3466f49a81f1d2c8fd89cc, type: 2}
   - {fileID: 1603939031222048, guid: 65783d4a112f6614ca11d189cb94607f, type: 2}
@@ -370,8 +429,7 @@ MonoBehaviour:
   decoratePrefabs:
   - {fileID: 1411233146398508, guid: ff612a33f19ca634e90591c31fe716d4, type: 2}
   - {fileID: 1668339979261500, guid: d028ad308b04d7d4dbd6c11e73804e61, type: 2}
-  - {fileID: 1778404236514374, guid: 03fc8864f27c54c4fbfef319225ffa5c, type: 2}
-  - {fileID: 1311954427859694, guid: 61ff5aa57ec5be6488344d2fc686e727, type: 2}
+  - {fileID: 1494282138164562, guid: d57f43f7c1bf3eb4292b6de6fb6c8e1c, type: 2}
   release: 1
 --- !u!114 &591758168
 MonoBehaviour:
